@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open new window with fullscreen iframe on )</title>
+  </head>
+  <body>
+    <h1>Press ")" to open a new window with a fullscreen iframe</h1>
+    
+    <script>
+      document.addEventListener("keydown", function(event) {
+        if (event.key === ")") {
+          // Open a new window with about:blank
+          var newWindow = window.open("about:blank");
+          
+          // Create an iframe element and add it to the new window's document
+          var iframe = document.createElement("iframe");
+          newWindow.document.body.appendChild(iframe);
+          
+          // Set the iframe's source to your desired URL
+          iframe.src = "https://www.example.com";
+          
+          // Make the iframe take up the full screen
+          iframe.requestFullscreen();
+        }
+      });
+    </script>
+  </body>
+</html>
